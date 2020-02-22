@@ -23,9 +23,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath)
-        cell.textLabel?.text = awemeList[indexPath.row].desc
+        let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath) as! VideoCell
+        //cell.textLabel?.text = awemeList[indexPath.row].desc
+        cell.aweme = awemeList[indexPath.row]
         return cell
+    }
+    
+    //行高
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UIScreen.main.bounds.size.height
     }
     
     //拖动结束
