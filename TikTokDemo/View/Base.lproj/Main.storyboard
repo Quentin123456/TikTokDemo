@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QQZ-eY-edZ">
-                                <rect key="frame" x="0.0" y="20" width="414" height="856"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VideoCell" textLabel="pXF-DR-5HZ" style="IBUITableViewCellStyleDefault" id="4F0-dO-wGb">
@@ -42,19 +43,36 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="XiG-Ih-oPR"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ted-l2-yX2" userLabel="loading View" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="182" y="435.5" width="50" height="25"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Z7S-Dh-xll"/>
+                                    <constraint firstAttribute="height" constant="25" id="qA2-5n-sJF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballPulse"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" name="myPink"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="QQZ-eY-edZ" secondAttribute="bottom" constant="20" symbolic="YES" id="0j5-n9-6lw"/>
+                            <constraint firstItem="ted-l2-yX2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0SW-Hf-kJW"/>
                             <constraint firstItem="QQZ-eY-edZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1UH-kX-0ci"/>
                             <constraint firstItem="QQZ-eY-edZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1VX-Ma-2JR"/>
-                            <constraint firstItem="QQZ-eY-edZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="NB0-cU-GhM"/>
+                            <constraint firstAttribute="bottom" secondItem="QQZ-eY-edZ" secondAttribute="bottom" id="6k8-Yx-qiy"/>
+                            <constraint firstItem="QQZ-eY-edZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="g2B-Lw-j4N"/>
                             <constraint firstItem="QQZ-eY-edZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sMQ-Mm-lLR"/>
                             <constraint firstItem="QQZ-eY-edZ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tdu-5b-od6"/>
+                            <constraint firstItem="ted-l2-yX2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xlQ-0c-A1L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="loadingView" destination="ted-l2-yX2" id="Okr-Kh-rJW"/>
                         <outlet property="tableView" destination="QQZ-eY-edZ" id="qaz-xk-EUi"/>
                     </connections>
                 </viewController>
@@ -63,4 +81,9 @@
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="myPink">
+            <color red="1" green="0.17254901960784313" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
