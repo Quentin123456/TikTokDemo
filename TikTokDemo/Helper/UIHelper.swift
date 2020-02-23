@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+var layers = [CAShapeLayer]()
+
 extension UIView {
     @IBInspectable public var cornerRadius: CGFloat {
         get {
@@ -35,4 +38,88 @@ extension UIView {
             layer.borderColor = newValue.cgColor
         }
     }
+    
+    func raiseAnimate(imgName: String, delay: TimeInterval) {
+        
+        let path = UIBezierPath()
+        
+        //起点: 在视图的中间
+        let beginPoint = CGPoint(x: bounds.midX, y: bounds.minY)
+        
+        //控制点的位移，随机数
+        let a: CGFloat = 2
+        let b: CGFloat = 1.5
+        let c: CGFloat = 3
+        
+        let offset1 = [a, b, c]
+        let cxOffset = offset1.randomElement()! * bounds.maxX
+        let cyOffset = offset1.randomElement()! * bounds.maxY
+        
+        //终点的位移， 随机数
+        let e: CGFloat = 1.5
+        let d: CGFloat = 1
+        let f: CGFloat = 0.8
+        
+        let offset2 = [e, d, f]
+        
+        let g: CGFloat = 2.5
+        let h: CGFloat = 3
+        let i: CGFloat = 2
+        
+        let offset3 = [g, h, i]
+        
+        let exOffset = offset2.randomElement()! * bounds.maxX
+        let eyOffset = offset3.randomElement()! * bounds.maxY
+        
+        //终点
+        let endPoint = CGPoint(x: beginPoint.x - exOffset, y: beginPoint.y - eyOffset)
+        
+        //控制点
+        let controlPoint = CGPoint(x: beginPoint.x - cxOffset, y: beginPoint.y - cyOffset)
+        path.move(to: beginPoint)
+        path.addQuadCurve(to: endPoint, controlPoint: controlPoint)
+        
+        let group = CAAnimationGroup()
+        group.duration = 4
+        group.beginTime = CACurrentMediaTime() + delay
+        group.repeatCount = .infinity
+        group.isRemovedOnCompletion = false
+        group.fillMode = .forwards
+        group.timingFunction = CAMediaTimingFunction(name: .linear)
+        
+        let pathAnimation = CAKeyframeAnimation(keyPath: "position")
+        pathAnimation.path = path.cgPath
+        
+        let rotateAnimation = CAKeyframeAnimation(keyPath: "transform.rotation")
+        rotateAnimation.values = [0, .pi / 2.0, .pi / 1.0]
+        
+        let alphaAnimation = CAKeyframeAnimation(keyPath: "opacity")
+        alphaAnimation.values = [0, 0.3, 1, 0.3, 1]
+        
+        let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+        scaleAnimation.values = [1.0, 1.8, 2.0]
+        
+        group.animations = [pathAnimation, rotateAnimation, alphaAnimation, scaleAnimation]
+        
+        let layer = CAShapeLayer()
+        layer.opacity = 0
+        layer.contents = UIImage(named: imgName)?.cgImage
+        layer.frame = CGRect(origin: beginPoint, size: CGSize(width: 10, height: 10))
+        self.layer.addSublayer(layer)
+        layer.add(group, forKey: nil)
+        
+        layers.append(layer)
+        
+    }
+    
+    //清楚层上动画
+    func resetViewAnimation() {
+        
+        for layer in layers {
+            layer.removeFromSuperlayer()
+        }
+        self.layer.removeAllAnimations()
+    }
+    
+    
 }

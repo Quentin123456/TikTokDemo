@@ -9,8 +9,12 @@
 import UIKit
 import MarqueeLabel
 import Kingfisher
+import ChainableAnimations
 
 class VideoCell: UITableViewCell {
+    
+    var animator1: ChainableAnimator!
+    var animator2: ChainableAnimator!
     
     var aweme: AwemeList! {
         didSet {
@@ -42,7 +46,13 @@ class VideoCell: UITableViewCell {
             //唱盘音乐封面
             let musicCover = aweme.music!.coverThumb!.urlList![0]
             musicCoverImageView.kf.setImage(with: URL(string: musicCover)!)
+            animator2 = ChainableAnimator(view: subDiskView)
+            animator2.rotate(angle: 180).animateWithRepeat(t: 3.5, count: 50)
             
+            //音符散发的动画
+            diskView.raiseAnimate(imgName: "icon_home_musicnote1", delay: 0)
+            diskView.raiseAnimate(imgName: "icon_home_musicnote2", delay: 1)
+            diskView.raiseAnimate(imgName: "icon_home_musicnote1", delay: 2)
         }
     }
 
@@ -83,5 +93,31 @@ class VideoCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        //重置关注按钮的所有动画状态
+        if animator1 != nil {
+            animator1.stop()
+            addFollowBtn.transform = .identity
+            addFollowBtn.layer.removeAllAnimations()
+            addFollowBtn.setImage(UIImage(named: "icon_personal_add_little"), for: .normal)
+        }
+        
+        //重置下一章切换
+        diskView.resetViewAnimation()
+        
+    }
 
+    @IBAction func addFollowTap(_ sender: UIButton) {
+        print("点击了关注")
+        
+        animator1 = ChainableAnimator(view: sender)
+        
+        UIView.transition(with: sender, duration: 0.2, options: .transitionCrossDissolve, animations: {
+            sender.setImage(UIImage(named: "iconSignDone"), for: .normal)
+        }) { (_) in
+            self.animator1.rotate(angle: 360).thenAfter(t: 0.6).wait(t: 0.3).transform(scale: 0).animate(t: 0.2)
+            
+        }
+    }
 }

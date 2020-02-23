@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="800" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QQZ-eY-edZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="800" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QQZ-eY-edZ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -31,10 +31,10 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                                                 </imageView>
                                                 <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_play_pause" translatesAutoresizingMaskIntoConstraints="NO" id="4rA-Nm-JGM">
-                                                    <rect key="frame" x="181" y="369" width="52.5" height="62"/>
+                                                    <rect key="frame" x="154.5" y="338" width="105" height="124"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XKa-SY-6aT">
-                                                    <rect key="frame" x="20" y="660.5" width="290" height="46.5"/>
+                                                    <rect key="frame" x="20" y="652.5" width="290" height="46.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKq-VB-7QV">
                                                             <rect key="frame" x="0.0" y="0.0" width="54.5" height="20.5"/>
@@ -51,13 +51,13 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="RSS-Lj-YDA">
-                                                    <rect key="frame" x="20" y="712" width="165.5" height="18"/>
+                                                    <rect key="frame" x="20" y="704" width="165.5" height="26"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="icon_home_musicnote3" translatesAutoresizingMaskIntoConstraints="NO" id="2Lw-7N-lF8">
-                                                            <rect key="frame" x="0.0" y="2.5" width="23" height="13"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="配乐名的跑马灯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="db2-4C-8vp" customClass="MarqueeLabel" customModule="MarqueeLabel">
-                                                            <rect key="frame" x="58" y="0.0" width="107.5" height="18"/>
+                                                            <rect key="frame" x="61" y="4" width="104.5" height="18"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -65,10 +65,10 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="PxY-vx-4tv">
-                                                    <rect key="frame" x="344" y="412" width="50" height="318"/>
+                                                    <rect key="frame" x="314" y="412" width="80" height="318"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTq-wp-zyd" userLabel="follow Container View">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <rect key="frame" x="15" y="0.0" width="50" height="50"/>
                                                             <subviews>
                                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQu-90-4RG">
                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -101,6 +101,9 @@
                                                                             <real key="value" value="10"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="addFollowTap:" destination="4F0-dO-wGb" eventType="touchUpInside" id="hTm-xs-QCh"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -114,14 +117,14 @@
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iIk-Yf-Ydw" userLabel="like Container View">
-                                                            <rect key="frame" x="5" y="67" width="40" height="50"/>
+                                                            <rect key="frame" x="0.0" y="67" width="80" height="50"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqF-Yv-o90">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="38"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqF-Yv-o90" customClass="ScaleAnimateButton" customModule="TikTokDemo" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                                                     <state key="normal" image="icon_home_like_before"/>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="493-Qz-yl5">
-                                                                    <rect key="frame" x="15.5" y="38" width="9.5" height="12"/>
+                                                                    <rect key="frame" x="35.5" y="50" width="9.5" height="0.0"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -129,14 +132,14 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nmN-46-iEl" userLabel="commet Container  View">
-                                                            <rect key="frame" x="5" y="134" width="40" height="50"/>
+                                                            <rect key="frame" x="0.0" y="134" width="80" height="50"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMV-Qg-ynz">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="32"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMV-Qg-ynz" customClass="ScaleAnimateButton" customModule="TikTokDemo" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="32"/>
                                                                     <state key="normal" image="icon_home_comment"/>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCk-QE-u2O">
-                                                                    <rect key="frame" x="15.5" y="32" width="9.5" height="18"/>
+                                                                    <rect key="frame" x="35.5" y="32" width="9.5" height="18"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -144,14 +147,14 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="66S-b2-2e8" userLabel="Share Container View">
-                                                            <rect key="frame" x="5" y="201" width="40" height="50"/>
+                                                            <rect key="frame" x="0.0" y="201" width="80" height="50"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBw-L8-Ha8">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="32"/>
+                                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBw-L8-Ha8" customClass="ScaleAnimateButton" customModule="TikTokDemo" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="32"/>
                                                                     <state key="normal" image="icon_home_share"/>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDV-s1-bVc">
-                                                                    <rect key="frame" x="15.5" y="32" width="9.5" height="18"/>
+                                                                    <rect key="frame" x="35.5" y="32" width="9.5" height="18"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -159,13 +162,13 @@
                                                             </subviews>
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7AA-0l-EFY" userLabel="rotate Disk Container View">
-                                                            <rect key="frame" x="0.0" y="268" width="50" height="50"/>
+                                                            <rect key="frame" x="15" y="268" width="50" height="50"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l22-dL-mht">
                                                                     <rect key="frame" x="20" y="20" width="50" height="50"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music_cover" translatesAutoresizingMaskIntoConstraints="NO" id="qIJ-56-ooZ" userLabel="music disk view">
-                                                                            <rect key="frame" x="0.5" y="0.5" width="49.000000000000014" height="49.000000000000014"/>
+                                                                            <rect key="frame" x="-24" y="-24" width="98" height="98"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                                     <real key="value" value="12"/>

@@ -14,6 +14,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var awemeList = [AwemeList]()
     var videoJsonIndex = 12
     
+    var currentPage = 0
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var loadingView: NVActivityIndicatorView!
@@ -34,10 +36,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         UIScreen.main.bounds.size.height
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     //拖动结束
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         videoJsonIndex -= 1
         getList()
+        currentPage = tableView.indexPathsForVisibleRows!.last!.row
+        print("页面：", currentPage)
     }
     
     override func viewDidLoad() {
