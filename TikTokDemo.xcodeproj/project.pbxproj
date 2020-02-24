@@ -21,6 +21,9 @@
 		171F79C324015FBE002717B9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171F79C224015FBE002717B9 /* Helper.swift */; };
 		171F79C524016629002717B9 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171F79C424016629002717B9 /* UIHelper.swift */; };
 		171F79C824021950002717B9 /* ScaleAnimateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171F79C724021950002717B9 /* ScaleAnimateButton.swift */; };
+		171F79CA24036912002717B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171F79C924036912002717B9 /* User.swift */; };
+		171F79CC240369DE002717B9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171F79CB240369DE002717B9 /* Comment.swift */; };
+		171F79CE24036D2B002717B9 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171F79CD24036D2B002717B9 /* CommentViewController.swift */; };
 		6A78DF62282291AF214D7D29 /* Pods_TikTokDemo_TikTokDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F836A3845D4913281353ADC5 /* Pods_TikTokDemo_TikTokDemoUITests.framework */; };
 		6AD2EB0E132309D5916484C3 /* Pods_TikTokDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFC433E165A5A309676076D /* Pods_TikTokDemoTests.framework */; };
 		DEA719DB3CFC90522E983C67 /* Pods_TikTokDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A6B4C29DBB7FA7CF90F964 /* Pods_TikTokDemo.framework */; };
@@ -65,6 +68,9 @@
 		171F79C224015FBE002717B9 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		171F79C424016629002717B9 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		171F79C724021950002717B9 /* ScaleAnimateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleAnimateButton.swift; sourceTree = "<group>"; };
+		171F79C924036912002717B9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		171F79CB240369DE002717B9 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		171F79CD24036D2B002717B9 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		30D5AFBAA1D68C66F6B75ED2 /* Pods-TikTokDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokDemo.debug.xcconfig"; path = "Target Support Files/Pods-TikTokDemo/Pods-TikTokDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		32913ACAC17EB2426B6BA8DC /* Pods-TikTokDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-TikTokDemoTests/Pods-TikTokDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3352005CFCC8FFF3638B5437 /* Pods-TikTokDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TikTokDemo.release.xcconfig"; path = "Target Support Files/Pods-TikTokDemo/Pods-TikTokDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				171F79B62400FF8F002717B9 /* Feed.swift */,
+				171F79C924036912002717B9 /* User.swift */,
+				171F79CB240369DE002717B9 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +189,7 @@
 			children = (
 				171F798A2400D700002717B9 /* ViewController.swift */,
 				171F79C024012456002717B9 /* VideoCell.swift */,
+				171F79CD24036D2B002717B9 /* CommentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -473,6 +482,9 @@
 				171F79C824021950002717B9 /* ScaleAnimateButton.swift in Sources */,
 				171F79892400D700002717B9 /* SceneDelegate.swift in Sources */,
 				171F79C124012456002717B9 /* VideoCell.swift in Sources */,
+				171F79CE24036D2B002717B9 /* CommentViewController.swift in Sources */,
+				171F79CA24036912002717B9 /* User.swift in Sources */,
+				171F79CC240369DE002717B9 /* Comment.swift in Sources */,
 				171F79C524016629002717B9 /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
