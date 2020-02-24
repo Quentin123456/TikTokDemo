@@ -4,6 +4,7 @@ PODS:
   - Kingfisher (5.9.0):
     - Kingfisher/Core (= 5.9.0)
   - Kingfisher/Core (5.9.0)
+  - lottie-ios (3.1.6)
   - MarqueeLabel (4.0.0)
   - NVActivityIndicatorView (4.8.0):
     - NVActivityIndicatorView/Presenter (= 4.8.0)
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - ChainableAnimations
   - Just
   - Kingfisher
+  - lottie-ios
   - MarqueeLabel
   - NVActivityIndicatorView
   - SnapKit
@@ -23,6 +25,7 @@ SPEC REPOS:
     - ChainableAnimations
     - Just
     - Kingfisher
+    - lottie-ios
     - MarqueeLabel
     - NVActivityIndicatorView
     - SnapKit
@@ -31,10 +34,11 @@ SPEC CHECKSUMS:
   ChainableAnimations: 12e0a88e72fb554ad4cda38c40474e4d65c972a2
   Just: aef5105fb2c7069b65aa6f21aec8f429057f9c19
   Kingfisher: ff98240aebb7302bdc4f1ecd701761030ce18b16
+  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   MarqueeLabel: b55b26e690b6ad41faedd95cbf5eae6f1d1735b4
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: ca07a0201ef3844749fa1263e5a845cb705b35cf
+PODFILE CHECKSUM: 895f579d7a7a8f80f98cf28134b411a67fea116e
 
 COCOAPODS: 1.8.4

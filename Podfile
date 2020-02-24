@@ -22,5 +22,6 @@ pod 'MarqueeLabel'
 pod 'NVActivityIndicatorView'
 pod 'ChainableAnimations'
 pod 'SnapKit'
+pod 'lottie-ios'
 
 end
