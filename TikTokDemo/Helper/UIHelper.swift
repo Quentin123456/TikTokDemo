@@ -11,6 +11,10 @@ import UIKit
 
 var layers = [CAShapeLayer]()
 
+@IBDesignable class ClippedView: UIView {
+    
+}
+
 extension UIView {
     @IBInspectable public var cornerRadius: CGFloat {
         get {
@@ -36,6 +40,47 @@ extension UIView {
         }
         set {
             layer.borderColor = newValue.cgColor
+        }
+    }
+    
+    //阴影色
+    @IBInspectable public var shadowColor: UIColor {
+        get {
+            UIColor(cgColor: layer.shadowColor!)
+        }
+        set {
+            layer.shadowColor = newValue.cgColor
+        }
+    }
+    
+    //阴影色的位移
+    @IBInspectable public var shadowOffset: CGSize {
+        get {
+            layer.shadowOffset
+        }
+        set {
+            layer.shadowOffset = newValue
+        }
+    }
+    
+    //阴影的圆角
+    @IBInspectable public var shadowRadius: CGFloat {
+        get {
+            layer.shadowRadius
+        }
+        set {
+            layer.shadowRadius = newValue
+        }
+    }
+    
+    //阴影的透明度
+    @IBInspectable public var shadowOpacity: Float {
+        get {
+            layer.shadowOpacity
+        }
+        set {
+            layer.shadowOpacity = newValue
+            layer.masksToBounds = false //设置裁边为false
         }
     }
     
